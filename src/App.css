@@ -1,38 +1,192 @@
-.App {
-  text-align: center;
+body{
+  margin: 0;
+  padding: 0;
+}
+.container-custom{
+  height: 100vh !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.background{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  opacity: .8;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main{
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.form-container{
+  display: flex;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px rgb(148, 146, 146);
+
+}
+
+.form{
+ margin-top: 4rem;
+}
+
+.form input {
+  border: none;
+  outline: none;
+  width: 80% !important;
+  border-bottom: 1px solid grey;
+  border-radius: 0;
+  font-size: 12px;
+}
+
+.login-btn{
+  width: 80%;
+  outline: none;
+  border: none;
+  background-color: #1096F4;
+}
+
+.create-btn{
+  cursor: pointer;
+  margin-top: 2rem !important;
+  font-size: 13px;
+}
+
+.google{
+  background-color: white;
+  outline: none;
+  border: none;
+  border: 1px solid grey;
+  border-radius: 15px;
+  width: 80%;
+  font-size: 14px;
+  height: 33px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.navbar-custom{
+  height: 4rem;
+  background-color: goldenrod;
+  width: 100%;
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
+}
+
+.logo-section{
+  width: 25%;
+  padding-left: 40px;
+
+}
+
+.heading-section{
+  width: 50%;
+}
+
+.auth-section{
+  width: 25%;
+}
+.auth-btn{
+  border: none;
+  outline: none;
+  background-color: black;
   color: white;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.Search_bar{
+  width: 60%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.search-btn{
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin-left: 1rem;
+  background-color: goldenrod;
+  padding: 0px 8px 0 8px !important;
+}
+
+.seller-btn{
+  width: 40%;
+}
+
+
+.card_img{
+  width:95%;
+  margin:auto;
+}
+
+.card_container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+
+@media only screen and (max-width:780px){
+  .heading-section{
+    display: none !important;
   }
-  to {
-    transform: rotate(360deg);
+
+  .logo-section{
+    width: 65% !important;
+    padding-left: 20px !important;
   }
+
+  .auth-section{
+    width: 35% !important;
+  }
+  .Search_bar{
+    width: 60% !important;
+    
+  }
+  
+  .search-btn{
+    margin-left: 1rem;
+  }
+  .seller-btn{
+    width: 40% !important;
+  }
+}
+
+@media only screen and (max-width:480px) {
+
+  .logo-section{
+    width: 40% !important;
+    padding-left: 10px !important;
+  }
+
+  .auth-section{
+    width: 60% !important;
+  }
+  .auth-btn{
+    margin: 5px;
+  }
+  .Search_bar{
+    width: 60% !important;
+    
+  }
+  
+  .search-btn{
+    margin-left: 1rem;
+    font-size: 10px !important;
+    border-radius: 4px !important;
+  }
+  .seller-btn{
+    width: 35% !important;
+  }
+
+ 
 }
