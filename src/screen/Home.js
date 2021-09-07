@@ -15,7 +15,11 @@ function Home() {
         const db = getDatabase();
         const starCountRef = ref(db, 'products');
         onValue(starCountRef, (data) => {
-            dispatch({type:'updateData' , data : data.val()})
+            var arr = []
+                for (var key in data.val()) {
+                    arr.push({ ...data.val()[key], id: key })
+                }
+                dispatch({ type: "updateData", data : arr })
         });
     },[])
     return (
