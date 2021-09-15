@@ -8,8 +8,8 @@ import store from './store';
 function App() {
   return (
 <Provider store={store}>
-{/* <AppRouter /> */}
-<Storage />
+<AppRouter />
+{/* <Storage /> */}
 </Provider>   
   );
 }

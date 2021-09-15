@@ -58,13 +58,12 @@ function Login(){
 <input value={email} onChange={(e)=> setEmail(e.target.value)} type="email" className="form-control p-2 mt-3"  placeholder="Enter email" />
 <input value={password} onChange={(e)=> setPassword(e.target.value)} type="password" className="form-control p-2 mt-3 " placeholder="Enter password" />
 <button onClick={login} className='login-btn p-1 mt-4'>Log In</button>
-<div className='google p-1 mt-4'><img width='15px' height='15px' src={googleBtn} />  Continue with google</div>
     </div>
 <div>
 <a onClick={()=> setForgot(true)} className='create-btn'>Forgot Password?</a>
 {forgot ? <div>
-        <input onChange={(e)=> setForgotEmail(e.target.value)} type='email' placeholder='ENter email'/>
-        <button onClick={forget}>Submit</button>
+        <input className="form-control w-75 p-2 mt-3" onChange={(e)=> setForgotEmail(e.target.value)} type='email' placeholder='ENter email'/>
+        <button className='login-btn p-1 mt-4' onClick={forget}>Submit</button>
     </div>
 :null}
 </div>

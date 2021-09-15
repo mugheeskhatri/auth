@@ -5,7 +5,8 @@ import { setData } from '../config/action';
 import {
     getStorage,
     uploadBytes, 
-    ref
+    ref,
+    getDownloadURL
 } from "firebase/storage";
 function Seller(){
     const [brandName , setBrandName] = useState()
@@ -20,32 +21,32 @@ function Seller(){
     const [category , setCategory] = useState()
     const [mughees , setMughees] = useState()
     const storage = getStorage()
-    console.log(image)
+    let random = (Math.random()*10).toFixed(3)
     let submit = ()=> {
-        let files = image;
-        let reader = new FileReader();
-        reader.readAsDataURL(files[0]);
-        reader.onload = (e)=>{
-            console.log(e.target.result)
-            const mountainsRef = ref(storage,e.target.result);
-        uploadBytes(mountainsRef, File).then((snapshot) => {
-            setStorageUrl(snapshot.metadata.fullPath);
-            console.log(snapshot.metadata);
-            let data = {
-                brandName,
-                address,
-                phone,
-                address,
-                state,
-                city,
-                storageUrl,
-                unit,
-                date,
-                category
-            }
-            setData(data)
+            const mountainsRef = ref(storage,`images/${random}`);
+        uploadBytes(mountainsRef, image).then((snapshot) => {
+            getDownloadURL(mountainsRef)  
+            .then( (url)=>{
+                console.log('url' ,  url)
+                setStorageUrl(url)
+                let data = {
+                    brandName,
+                    address,
+                    phone,
+                    address,
+                    state,
+                    city,
+                    storageUrl,
+                    unit,
+                    date,
+                    category
+                }
+                if(data.storageUrl != undefined){
+                     setData(data)
+                }
+            })  
         })
-        }
+        
        
     }
       return(
@@ -64,7 +65,7 @@ function Seller(){
 
                 </div>
                 <div className='col-md-6 justify-content-center'>
-                <input onChange={(e)=> setImage(e.target.files)} className='image-input mt-5' type='file' />
+                <input onChange={(e)=> setImage(e.target.files[0])} className='image-input mt-5' type='file' />
                 <input value={unit} onChange={(e)=> setUnit(e.target.value)} type="text" className="form-control p-2 mt-3 " id="exampleInputPassword1" placeholder="Enter Unit (in KG)" />
                 <input value={date} onChange={(e)=> setDate(e.target.value)} type="date" className="form-control p-2 mt-3 " />
                 <select onBlur={(e)=> setCategory(e.target.value)} onChange={(e)=> setCategory(e.target.value)} className= 'w-100 p-2 mt-3'>

@@ -134,6 +134,10 @@ body{
 }
 
 
+.height{
+  height: 60%;
+}
+
 
 @media only screen and (max-width:780px){
   .heading-section{

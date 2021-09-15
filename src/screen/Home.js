@@ -19,6 +19,7 @@ function Home() {
                 for (var key in data.val()) {
                     arr.push({ ...data.val()[key], id: key })
                 }
+                console.log('arr',arr)
                 dispatch({ type: "updateData", data : arr })
         });
     },[])
@@ -27,9 +28,9 @@ function Home() {
             <Navbar />
             <Slider />
            <CardLayout name='Fashion'/>
-           {/* <CardLayout name='Electronics'/>
+           <CardLayout name='Electronics'/>
            <CardLayout name='Groccery'/>
-           <CardLayout name='Food'/> */}
+           <CardLayout name='Food'/>
         </div>
     )
 }

@@ -10,10 +10,10 @@ function Navbar() {
     console.log(user)
     let history = useHistory();
     let logOut =()=>{
-        // signOut(auth).then(()=>{
-        //     alert('Sign Out')
-        //     setUser(false)
-        // })
+        signOut(auth).then(()=>{
+            alert('Sign Out')
+            setUser(false)
+        })
     }
     return (
         <div>
